@@ -120,3 +120,162 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* ============================================ */
+/* ============== PRINT STYLES ============== */
+/* ============================================ */
+@media print {
+  /* --- Réinitialisations générales pour l'impression --- */
+  body {
+    font-size: 10pt; /* Taille de police plus petite pour tenir sur une page */
+    line-height: 1.3; /* Interligne légèrement réduit */
+    color: #000 !important; /* Forcer le texte en noir */
+    background-color: #fff !important; /* Forcer le fond en blanc */
+    -webkit-print-color-adjust: exact; /* Important pour que les couleurs (si on en garde) s'impriment */
+    print-color-adjust: exact;
+  }
+
+  /* --- Masquer les éléments inutiles à l'impression --- */
+  /* Exemple : si tu avais un bouton "Télécharger PDF" ou un footer de site web */
+  /* .element-a-masquer-en-pdf { display: none !important; } */
+  /* Pour l'instant on n'a rien à masquer, mais c'est bon à savoir */
+
+  /* --- Ajustements de mise en page pour tenir sur 1 page --- */
+  main.container {
+    max-width: 100% !important; /* Utiliser toute la largeur disponible */
+    padding: 1cm !important; /* Marges d'impression raisonnables (Ajuster si besoin) */
+    margin: 0 !important;
+    box-shadow: none !important; /* Enlever les ombres */
+    border: none !important; /* Enlever les bordures */
+  }
+
+  /* --- Espacements réduits --- */
+  /* Réduire les marges verticales entre les sections (Separator, titres...) */
+  .my-6, .my-8, .mb-6, .mb-8, .space-y-6 > :not([hidden]) ~ :not([hidden]), .space-y-8 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0.8rem !important; /* Valeur réduite (ajuster finement) */
+    margin-bottom: 0.8rem !important; /* Valeur réduite (ajuster finement) */
+  }
+   /* Cibler plus spécifiquement les separateurs si besoin */
+  hr[data-orientation="horizontal"] { /* Shadcn Separator est un <hr> */
+     margin-top: 1rem !important;
+     margin-bottom: 1rem !important;
+     border-color: #ccc !important; /* Rendre plus léger ? */
+  }
+
+  /* --- Styles spécifiques pour certains composants en impression --- */
+  h1, h2, h3 {
+    color: #000 !important; /* Assurer que les titres sont noirs */
+    page-break-after: avoid !important; /* Essayer d'éviter une coupure juste après un titre */
+  }
+
+   h2 { /* Titres de section */
+     font-size: 14pt !important;
+     margin-bottom: 0.6rem !important;
+   }
+    h3 { /* Titres de sous-section (exp, edu, skills) */
+     font-size: 11pt !important;
+     margin-bottom: 0.3rem !important;
+   }
+
+  p, li, span {
+     color: #000 !important;
+     page-break-inside: avoid !important; /* Essayer d'éviter une coupure au milieu d'un paragraphe/item */
+  }
+
+  a {
+    color: #000 !important; /* Liens en noir */
+    text-decoration: none !important; /* Pas de soulignement (sauf si voulu) */
+  }
+  /* Optionnel: afficher l'URL des liens à côté */
+  /* a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 8pt; } */
+
+
+  /* Badges (Skills, Interests) */
+  [data-radix-collection-item] { /* Sélecteur plus générique pour les badges Shadcn */
+    border: 1px solid #ccc !important; /* Bordure légère pour la structure */
+    background-color: #f8f8f8 !important; /* Fond très léger */
+    color: #000 !important;
+    padding: 0.1rem 0.4rem !important; /* Padding réduit */
+    font-size: 8pt !important; /* Taille de police réduite */
+    margin: 0.1rem !important; /* Marge réduite */
+    display: inline-block; /* Assurer l'affichage */
+  }
+
+  /* Cartes (Projects) */
+  [role="region"][aria-labelledby] > div.grid > div[class*="card"] { /* Sélecteur pour les cartes dans la grille */
+     border: 1px solid #ddd !important;
+     box-shadow: none !important;
+     padding: 0.5rem !important; /* Réduire padding interne */
+     page-break-inside: avoid !important; /* Essayer d'éviter de couper une carte */
+  }
+   [role="region"][aria-labelledby] > div.grid > div[class*="card"] [class*="card-header"] {
+      padding: 0.3rem 0.5rem !important;
+      margin-bottom: 0.2rem !important;
+   }
+   [role="region"][aria-labelledby] > div.grid > div[class*="card"] [class*="card-title"] {
+       font-size: 11pt !important;
+   }
+    [role="region"][aria-labelledby] > div.grid > div[class*="card"] [class*="card-content"] {
+       padding: 0.3rem 0.5rem !important;
+    }
+     [role="region"][aria-labelledby] > div.grid > div[class*="card"] [class*="card-content"] ul {
+       font-size: 9pt !important;
+       line-height: 1.2 !important;
+     }
+   [role="region"][aria-labelledby] > div.grid > div[class*="card"] [class*="card-footer"] {
+       padding: 0.3rem 0.5rem !important;
+       margin-top: 0.3rem !important;
+   }
+   /* Masquer le bouton GitHub en impression ? Ou le styler différemment ? */
+   [role="region"][aria-labelledby] > div.grid > div[class*="card"] [class*="card-footer"] button {
+      display: none !important; /* Option: Masquer les boutons */
+      /* Alternative: Styler très simplement */
+      /* border: 1px solid #ccc !important; background: none !important; color: #000 !important; font-size: 8pt !important; padding: 0.1rem 0.3rem !important; */
+   }
+
+   /* Expériences & Formation */
+   section[aria-labelledby="experience-heading"] > div > div,
+   section[aria-labelledby="education-heading"] > div > div {
+       page-break-inside: avoid !important; /* Eviter coupure au milieu d'une expérience/formation */
+       margin-bottom: 1rem !important; /* Réduire espace entre items */
+   }
+   section[aria-labelledby="experience-heading"] h3,
+   section[aria-labelledby="education-heading"] h3 {
+        font-size: 11pt !important;
+        margin-bottom: 0.1rem !important;
+   }
+   section[aria-labelledby="experience-heading"] ul li,
+   section[aria-labelledby="education-heading"] ul li {
+        font-size: 9pt !important;
+        line-height: 1.2 !important;
+   }
+    section[aria-labelledby="experience-heading"] .text-sm.text-gray-500, /* Dates */
+    section[aria-labelledby="education-heading"] .text-sm.text-gray-500 {
+         font-size: 9pt !important;
+    }
+
+
+   /* --- Forcer les colonnes des projets en une seule colonne pour l'impression ? --- */
+   /* Ceci peut aider si les 3 colonnes sont trop serrées sur un A4 */
+   /* @media print {
+        [role="region"][aria-labelledby="projects-heading"] > div.grid {
+            grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+        }
+   } */
+
+  /* --- Forcer la disposition Expérience/Education en une seule colonne si besoin --- */
+   /* section[aria-labelledby="experience-heading"] > div > div,
+    section[aria-labelledby="education-heading"] > div > div {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+    }
+     section[aria-labelledby="experience-heading"] > div > div > div:first-child, /* Dates */
+   /* section[aria-labelledby="education-heading"] > div > div > div:first-child {
+        width: 100% !important;
+        margin-bottom: 0.2rem !important;
+    }
+     section[aria-labelledby="experience-heading"] > div > div > div:last-child, /* Détails */
+    /*section[aria-labelledby="education-heading"] > div > div > div:last-child {
+        width: 100% !important;
+    }*/
+}
