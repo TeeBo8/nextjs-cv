@@ -5,7 +5,7 @@ import { Terminal } from 'lucide-react';
 const AboutCV = () => {
   return (
     <section aria-labelledby="about-heading">
-      <h2 id="about-heading" className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-4">
+      <h2 id="about-heading" className="text-2xl font-semibold text-primary dark:text-primary mb-4">
         À propos
       </h2>
       <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-6">

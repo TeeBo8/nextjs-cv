@@ -22,7 +22,7 @@ const skillCategories = [
 const SkillsCV = () => {
   return (
     <section aria-labelledby="skills-heading">
-      <h2 id="skills-heading" className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6">
+      <h2 id="skills-heading" className="text-2xl font-semibold text-primary dark:text-primary mb-6">
         Compétences techniques
       </h2>
       <div className="space-y-6">

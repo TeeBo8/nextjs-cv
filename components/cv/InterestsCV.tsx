@@ -19,8 +19,8 @@ const interestCategories = [
 const InterestsCV = () => {
   return (
     <section aria-labelledby="interests-heading">
-      <h2 id="interests-heading" className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6">
-        Centres d’intérêt
+      <h2 id="interests-heading" className="text-2xl font-semibold text-primary dark:text-primary mb-6">
+        Centres d'intérêt
       </h2>
        <div className="space-y-5"> {/* Espace entre les catégories */}
         {interestCategories.map((category) => (

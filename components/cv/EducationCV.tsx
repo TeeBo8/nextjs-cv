@@ -35,7 +35,7 @@ const educationData = [
 const EducationCV = () => {
   return (
     <section aria-labelledby="education-heading">
-      <h2 id="education-heading" className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6">
+      <h2 id="education-heading" className="text-2xl font-semibold text-primary dark:text-primary mb-6">
         Formation
       </h2>
       <div className="space-y-6"> {/* Espace vertical entre chaque diplôme */}

@@ -45,10 +45,10 @@ const projectsData = [
 const ProjectsCV = () => {
   return (
     <section aria-labelledby="projects-heading">
-      <h2 id="projects-heading" className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6">
+      <h2 id="projects-heading" className="text-2xl font-semibold text-primary dark:text-primary mb-6">
         Projets principaux
         <span className="text-sm font-normal text-gray-500 dark:text-gray-400 ml-2">
-          (Plus sur <Link href="https://github.com/TeeBo8" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary">GitHub</Link>)
+          (Plus sur <Link href="https://github.com/TeeBo8" target="_blank" rel="noopener noreferrer" className="underline text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors">GitHub</Link>)
         </span>
       </h2>
 

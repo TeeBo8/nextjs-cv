@@ -63,7 +63,7 @@ const experienceData = [
 const ExperienceCV = () => {
   return (
     <section aria-labelledby="experience-heading">
-      <h2 id="experience-heading" className="text-2xl font-semibold text-gray-800 dark:text-gray-200 mb-6">
+      <h2 id="experience-heading" className="text-2xl font-semibold text-primary dark:text-primary mb-6">
         Expériences professionnelles
       </h2>
       <div className="space-y-8">
