@@ -21,19 +21,19 @@ const skillCategories = [
 
 const SkillsCV = () => {
   return (
-    <section aria-labelledby="skills-heading">
-      <h2 id="skills-heading" className="text-2xl font-semibold text-primary dark:text-primary mb-6">
+    <section aria-labelledby="skills-heading" className="w-full">
+      <h2 id="skills-heading" className="text-xl font-semibold text-primary dark:text-primary mb-4">
         Compétences techniques
       </h2>
-      <div className="space-y-6">
+      <div className="space-y-4">
         {skillCategories.map((category) => (
           <div key={category.title}>
-            <h3 className="text-lg font-medium text-gray-700 dark:text-gray-300 mb-3">
+            <h3 className="text-base font-medium text-gray-700 dark:text-gray-300 mb-2">
               {category.title}
             </h3>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-1.5">
               {category.skills.map((skill) => (
-                <Badge key={skill} variant="secondary">
+                <Badge key={skill} variant="secondary" className="text-xs px-2 py-0.5">
                   {skill}
                 </Badge>
               ))}

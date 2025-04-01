@@ -2,7 +2,6 @@ import React from 'react';
 // --- Composants de Section ---
 import SidebarCV from '@/components/cv/SidebarCV'; // Nouveau composant
 import AboutCV from '@/components/cv/AboutCV';
-import SkillsCV from '@/components/cv/SkillsCV';
 import ProjectsCV from '@/components/cv/ProjectsCV';
 import ExperienceCV from '@/components/cv/ExperienceCV';
 import EducationCV from '@/components/cv/EducationCV';
@@ -28,8 +27,6 @@ export default function Home() {
           {/* On ne met plus de HeaderCV ici */}
           {/* <Separator className="my-6 md:my-8" /> Supprimer les séparateurs entre sections ? A voir*/}
           <AboutCV />
-          {/* <Separator className="my-6 md:my-8" /> */}
-          <SkillsCV />
           {/* <Separator className="my-6 md:my-8" /> */}
           <ProjectsCV />
           {/* <Separator className="my-6 md:my-8" /> */}

@@ -3,6 +3,8 @@ import { Github, Linkedin, Mail, Phone, Home as HomeIcon } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Image from 'next/image';
 import Link from 'next/link';
+import { Separator } from '@/components/ui/separator';
+import SkillsCV from './SkillsCV';
 
 const SidebarCV = () => {
   // --- Constantes copiées de HeaderCV ---
@@ -70,8 +72,11 @@ const SidebarCV = () => {
         </div>
       </div>
 
-      {/* Espace pour futurs éléments dans la sidebar (ex: Skills) */}
-      {/* <Separator className="my-4" /> */}
+      {/* Section 3: Compétences */}
+      <Separator className="my-2 bg-slate-300 dark:bg-slate-600" />
+      <SkillsCV />
+
+      {/* Espace pour futurs éléments dans la sidebar */}
       {/* <div className="mt-auto pt-6"> Footer de sidebar ? </div> */}
 
     </aside>
