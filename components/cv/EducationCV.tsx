@@ -46,8 +46,8 @@ const EducationCV = () => {
       </h2>
       <Accordion type="single" collapsible className="w-full space-y-4">
         {educationData.map((edu, index) => (
-          <AccordionItem key={index} value={`item-${index}`} className="border border-slate-200 dark:border-slate-700 rounded-lg px-4 transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/50">
-            <AccordionTrigger className="text-left hover:no-underline py-4">
+          <AccordionItem key={index} value={`item-${index}`} className="border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden transition-colors group data-[state=open]:border-primary/50 dark:data-[state=open]:border-primary/70">
+            <AccordionTrigger className="text-left hover:no-underline py-4 px-4 transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/50 data-[state=open]:bg-slate-50 dark:data-[state=open]:bg-slate-800/50">
               <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-2 pr-4">
                  <div className='flex-grow'>
                     <h3 className="text-base font-semibold text-gray-900 dark:text-gray-100">
@@ -62,7 +62,7 @@ const EducationCV = () => {
                  </div>
               </div>
             </AccordionTrigger>
-            <AccordionContent className="pt-0 pb-4">
+            <AccordionContent className="pt-0 pb-4 px-4 bg-white dark:bg-slate-800/30">
               {/* Afficher la description seulement si elle existe */}
               {edu.description && (
                  <p className="text-sm text-gray-500 dark:text-gray-400 italic pl-1">

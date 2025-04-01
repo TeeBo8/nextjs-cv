@@ -30,7 +30,7 @@ const InterestsCV = () => {
 
              <div className="flex flex-wrap gap-2">
               {category.interests.map((interest) => (
-                <Badge key={interest} variant="outline"> {/* Variant 'outline' pour un look plus léger */}
+                <Badge key={interest} variant="outline" className="transition-colors hover:bg-primary/10 dark:hover:bg-primary/20 hover:border-primary/50 dark:hover:border-primary/70 hover:text-primary dark:hover:text-primary">
                   {interest}
                 </Badge>
               ))}

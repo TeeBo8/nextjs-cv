@@ -55,7 +55,7 @@ const ProjectsCV = () => {
       {/* Grille pour les cartes */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {projectsData.map((project) => (
-          <Card key={project.title} className="flex flex-col justify-between">
+          <Card key={project.title} className="flex flex-col justify-between border border-slate-200 dark:border-slate-700 shadow-md hover:shadow-lg hover:border-primary/50 dark:hover:border-primary/70 transition-all duration-300 ease-in-out transform hover:-translate-y-1">
             <CardHeader>
               <CardTitle className="text-xl">{project.title}</CardTitle>
             </CardHeader>
