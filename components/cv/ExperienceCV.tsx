@@ -1,4 +1,10 @@
 import React from 'react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 // Données des expériences professionnelles et formation en cours
 const experienceData = [
@@ -66,31 +72,34 @@ const ExperienceCV = () => {
       <h2 id="experience-heading" className="text-2xl font-semibold text-primary dark:text-primary mb-6">
         Expériences professionnelles
       </h2>
-      <div className="space-y-8">
+      <Accordion type="single" collapsible className="w-full space-y-4">
         {experienceData.map((exp, index) => (
-          <div key={index} className="flex flex-col md:flex-row gap-x-6">
-            {/* Colonne Dates (prend moins de place) */}
-            <div className="md:w-1/4 mb-2 md:mb-0 text-sm text-gray-500 dark:text-gray-400 font-medium shrink-0">
-              {exp.dates}
-            </div>
-
-            {/* Colonne Détails (prend plus de place) */}
-            <div className="md:w-3/4 grow">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                {exp.title}
-              </h3>
-              <p className="text-md font-medium text-primary dark:text-primary-foreground mb-2">
-                {exp.company} {exp.location && `• ${exp.location}`}
-              </p>
-              <ul className="list-disc list-inside space-y-1 text-sm text-gray-600 dark:text-gray-400">
+          <AccordionItem key={index} value={`item-${index}`} className="border border-slate-200 dark:border-slate-700 rounded-lg px-4 transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/50">
+            <AccordionTrigger className="text-left hover:no-underline py-4">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-2 pr-4">
+                 <div className='flex-grow'>
+                    <h3 className="text-base font-semibold text-gray-900 dark:text-gray-100">
+                       {exp.title}
+                    </h3>
+                    <p className="text-sm font-medium text-primary/90 dark:text-primary/90">
+                      {exp.company} {exp.location && `• ${exp.location}`}
+                    </p>
+                 </div>
+                 <div className="text-xs text-gray-500 dark:text-gray-400 font-medium shrink-0 mt-1 md:mt-0">
+                    {exp.dates}
+                 </div>
+              </div>
+            </AccordionTrigger>
+            <AccordionContent className="pt-0 pb-4">
+              <ul className="list-disc list-inside space-y-1 text-sm text-gray-600 dark:text-gray-400 pl-1">
                 {exp.description.map((item, idx) => (
                   <li key={idx}>{item}</li>
                 ))}
               </ul>
-            </div>
-          </div>
+            </AccordionContent>
+          </AccordionItem>
         ))}
-      </div>
+      </Accordion>
     </section>
   );
 };

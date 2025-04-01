@@ -1,4 +1,10 @@
 import React from 'react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 // Données de formation académique
 const educationData = [
@@ -38,32 +44,39 @@ const EducationCV = () => {
       <h2 id="education-heading" className="text-2xl font-semibold text-primary dark:text-primary mb-6">
         Formation
       </h2>
-      <div className="space-y-6"> {/* Espace vertical entre chaque diplôme */}
+      <Accordion type="single" collapsible className="w-full space-y-4">
         {educationData.map((edu, index) => (
-          <div key={index} className="flex flex-col md:flex-row gap-x-6">
-            {/* Colonne Dates */}
-            <div className="md:w-1/4 mb-1 md:mb-0 text-sm text-gray-500 dark:text-gray-400 font-medium shrink-0">
-              {edu.dates}
-            </div>
-
-            {/* Colonne Détails */}
-            <div className="md:w-3/4 grow">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-100">
-                {edu.degree}
-              </h3>
-              <p className="text-md font-medium text-gray-600 dark:text-gray-300 mb-1">
-                {edu.institution} {edu.location && `• ${edu.location}`}
-              </p>
+          <AccordionItem key={index} value={`item-${index}`} className="border border-slate-200 dark:border-slate-700 rounded-lg px-4 transition-colors hover:bg-slate-50 dark:hover:bg-slate-800/50">
+            <AccordionTrigger className="text-left hover:no-underline py-4">
+              <div className="flex flex-col md:flex-row justify-between items-start md:items-center w-full gap-2 pr-4">
+                 <div className='flex-grow'>
+                    <h3 className="text-base font-semibold text-gray-900 dark:text-gray-100">
+                      {edu.degree}
+                    </h3>
+                    <p className="text-sm font-medium text-gray-600 dark:text-gray-300">
+                      {edu.institution} {edu.location && `• ${edu.location}`}
+                    </p>
+                 </div>
+                 <div className="text-xs text-gray-500 dark:text-gray-400 font-medium shrink-0 mt-1 md:mt-0">
+                    {edu.dates}
+                 </div>
+              </div>
+            </AccordionTrigger>
+            <AccordionContent className="pt-0 pb-4">
               {/* Afficher la description seulement si elle existe */}
               {edu.description && (
-                 <p className="text-sm text-gray-500 dark:text-gray-400 italic">
+                 <p className="text-sm text-gray-500 dark:text-gray-400 italic pl-1">
                    {edu.description}
                  </p>
               )}
-            </div>
-          </div>
+               {/* Si pas de description, on peut mettre un petit fallback ou rien */}
+               {!edu.description && (
+                  <p className="text-sm text-gray-400 dark:text-gray-500 italic pl-1">(Aucun détail supplémentaire)</p>
+               )}
+            </AccordionContent>
+          </AccordionItem>
         ))}
-      </div>
+      </Accordion>
     </section>
   );
 };
