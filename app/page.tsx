@@ -6,8 +6,11 @@ import ProjectsCV from '@/components/cv/ProjectsCV';
 import ExperienceCV from '@/components/cv/ExperienceCV';
 import EducationCV from '@/components/cv/EducationCV';
 import InterestsCV from '@/components/cv/InterestsCV';
+import ContactCV from '@/components/cv/ContactCV';
 // --- UI ---
 import { Separator } from "@/components/ui/separator";
+import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import { ContactForm } from "@/components/ContactForm";
 
 // Fini d'importer HeaderCV ici pour l'instant
 
@@ -36,6 +39,9 @@ export default function Home() {
           {/* <Separator className="my-6 md:my-8" /> */}
           <InterestsCV />
           {/* Note: Les séparateurs sont peut-être moins nécessaires avec le space-y sur le conteneur */}
+          
+          {/* Nouvelle section Contact */}
+          <ContactCV />
        </div>
     </main>
   );
