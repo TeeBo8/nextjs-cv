@@ -81,6 +81,51 @@ const ProjectsCV = () => {
       <p className="text-sm text-gray-500 dark:text-gray-400 mt-6 italic">
         Note : Je développe également des projets plus complexes pour des clients potentiels, dont les dépôts sont privés.
       </p>
+
+      {/* Projet FinanceAI */}
+      <div className="mt-8">
+        <h3 className="text-xl font-semibold text-primary dark:text-primary mb-4">
+          Projet en vedette
+        </h3>
+        <Card className="border-2 border-primary/30 dark:border-primary/50 shadow-lg hover:shadow-xl transition-all duration-300 ease-in-out transform hover:-translate-y-1">
+          <CardHeader>
+            <CardTitle className="text-xl">FinanceAI - Application de Gestion de Finances Personnelles</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="space-y-4">
+              <div>
+                <h4 className="font-medium text-sm text-gray-700 dark:text-gray-300 mb-2">Description :</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Application web full-stack permettant le suivi des comptes, transactions, budgets et catégories, 
+                  avec authentification sécurisée (Google, Discord), filtres de données, transferts et rapports visuels. 
+                  Objectif à terme : intégration IA et modèle freemium.
+                </p>
+              </div>
+              <div>
+                <h4 className="font-medium text-sm text-gray-700 dark:text-gray-300 mb-2">Stack Technique :</h4>
+                <p className="text-sm text-gray-600 dark:text-gray-400">
+                  Next.js (App Router), TypeScript, tRPC, Drizzle ORM, PostgreSQL (Supabase), 
+                  Auth.js (NextAuth.js v5), Tailwind CSS, shadcn/ui, Recharts, Vercel.
+                </p>
+              </div>
+            </div>
+          </CardContent>
+          <CardFooter className="flex flex-col md:flex-row gap-3">
+            <Button asChild variant="default" size="sm" className="w-full md:w-auto">
+              <Link href="https://financeai-eta.vercel.app/" target="_blank" rel="noopener noreferrer">
+                Voir la démo
+                <ArrowUpRight className="w-4 h-4 ml-2" />
+              </Link>
+            </Button>
+            <Button asChild variant="outline" size="sm" className="w-full md:w-auto">
+              <Link href="#" target="_blank" rel="noopener noreferrer">
+                Code Source (privé, disponible sur demande)
+                <ArrowUpRight className="w-4 h-4 ml-2" />
+              </Link>
+            </Button>
+          </CardFooter>
+        </Card>
+      </div>
     </section>
   );
 };
