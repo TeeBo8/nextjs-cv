@@ -118,7 +118,7 @@ const ProjectsCV = () => {
               </Link>
             </Button>
             <Button asChild variant="outline" size="sm" className="w-full md:w-auto">
-              <Link href="#" target="_blank" rel="noopener noreferrer">
+              <Link href="https://github.com/TeeBo8/financeai" target="_blank" rel="noopener noreferrer">
                 Code Source (privé, disponible sur demande)
                 <ArrowUpRight className="w-4 h-4 ml-2" />
               </Link>
