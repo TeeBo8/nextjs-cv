@@ -9,7 +9,7 @@ const AboutCV = () => {
         À propos
       </h2>
       <p className="text-base text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-        Développeur web enthousiaste en transition professionnelle, je me spécialise dans la création d'applications Full Stack modernes et performantes. Passionné par la résolution de problèmes complexes, je m'appuie sur des outils d'IA pour optimiser mon développement (notamment avec Next.js/TypeScript) et j'aime concevoir des interfaces utilisateur intuitives ainsi que des logiques backend robustes. Autodidacte et curieux, j'ai complété ma formation par 3 mois d'exploration intensive des IA génératives appliquées au code.
+        Développeur web enthousiaste en transition professionnelle, je me spécialise dans la création d&apos;applications Full Stack modernes et performantes. Passionné par la résolution de problèmes complexes, je m&apos;appuie sur des outils d&apos;IA pour optimiser mon développement (notamment avec Next.js/TypeScript) et j&apos;aime concevoir des interfaces utilisateur intuitives ainsi que des logiques backend robustes. Autodidacte et curieux, j&apos;ai complété ma formation par 3 mois d&apos;exploration intensive des IA génératives appliquées au code.
       </p>
 
       <Alert className="border-primary/50 dark:border-primary/70 bg-primary/5 dark:bg-primary/10">

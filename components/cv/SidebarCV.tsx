@@ -2,7 +2,6 @@ import React from 'react';
 import { Github, Linkedin, Mail, Phone, Home as HomeIcon } from 'lucide-react';
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Image from 'next/image';
-import Link from 'next/link';
 import { Separator } from '@/components/ui/separator';
 import SkillsCV from './SkillsCV';
 

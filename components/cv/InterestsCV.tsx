@@ -1,26 +1,25 @@
 import React from 'react';
 import { Badge } from "@/components/ui/badge";
 
-// Données des centres d'intérêt
+// Données des centres d&apos;intérêt
 const interestsData = {
   technology: ["Veille IA (Générative, Dev)", "Blockchain", "Métavers", "Développement personnel"],
   hardware: ["Montage & Optimisation PC Gaming"],
   hobbies: ["Football", "VTT", "Jeux vidéo (Stratégie/RPG)", "Lecture scientifique & tech"],
 };
 
-// Catégories pour l'affichage
+// Catégories pour l&apos;affichage
 const interestCategories = [
    { title: "Technologie & Apprentissage", interests: interestsData.technology },
    { title: "Hardware", interests: interestsData.hardware },
    { title: "Loisirs", interests: interestsData.hobbies }
 ];
 
-
 const InterestsCV = () => {
   return (
     <section aria-labelledby="interests-heading">
       <h2 id="interests-heading" className="text-2xl font-semibold text-primary dark:text-primary mb-6">
-        Centres d'intérêt
+        Centres d&apos;intérêt
       </h2>
        <div className="space-y-5"> {/* Espace entre les catégories */}
         {interestCategories.map((category) => (

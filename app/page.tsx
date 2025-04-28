@@ -16,7 +16,7 @@ export default function Home() {
     // Utilisation de CSS Grid pour le layout principal
     // Sur mobile (par défaut): 1 colonne
     // Sur écrans 'lg' et plus: 2 colonnes (sidebar fixe ~300px, contenu prend le reste)
-    <main className="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-8 md:gap-12 p-4 md:p-8 lg:p-12 max-w-7xl mx-auto relative">
+    <main className="container mx-auto px-4 py-8 md:py-12 lg:py-16 grid lg:grid-cols-[300px_1fr] gap-8 md:gap-10">
       {/* Bouton de thème en haut à droite */}
       <div className="absolute top-4 right-4 z-10">
         <ModeToggle />
