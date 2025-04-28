@@ -1,19 +1,27 @@
 import type { Metadata } from "next";
-import { Inter, Poppins } from "next/font/google";
+import { Merriweather, Source_Serif_4, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "@/components/theme-provider";
 
-const fontInter = Inter({
+const fontSans = Merriweather({
   subsets: ["latin"],
-  variable: "--font-inter",
+  weight: ['400', '700'],
+  variable: "--font-sans",
   display: 'swap',
 });
 
-const fontPoppins = Poppins({
+const fontSerif = Source_Serif_4({
   subsets: ["latin"],
-  weight: ['400', '500', '600', '700'],
-  variable: "--font-poppins",
+  style: ['normal', 'italic'],
+  variable: "--font-serif",
+  display: 'swap',
+});
+
+const fontMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
   display: 'swap',
 });
 
@@ -32,12 +40,15 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          fontInter.variable,
-          fontPoppins.variable
+          fontSans.variable,
+          fontSerif.variable,
+          fontMono.variable
         )}
       >
-        {children}
-        <Toaster />
+        <ThemeProvider>
+          {children}
+          <Toaster />
+        </ThemeProvider>
       </body>
     </html>
   );
