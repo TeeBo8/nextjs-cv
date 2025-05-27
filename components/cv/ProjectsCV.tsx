@@ -13,32 +13,35 @@ import { ArrowUpRight } from 'lucide-react';
 // Données des projets
 const projectsData = [
   {
-    title: "Tiblog",
+    title: "Aura Landing - Spa & Wellness Template",
     description: [
-      "Blog personnel développé avec Next.js 14 (App Router), TypeScript, et Tailwind CSS.",
-      "Gestion de contenu via MDX, base de données PostgreSQL gérée avec l'ORM Prisma.",
-      "Focus sur les performances, le SEO et une expérience de lecture agréable.",
+      "Modern Next.js landing page template for spas and wellness centers.",
+      "Features a clean design, smooth animations, and a functional contact form.",
+      "Built with Next.js, TypeScript, Tailwind CSS, shadcn/ui, tRPC, and Resend."
     ],
-    link: "https://github.com/TeeBo8/Tiblog",
+    link: "https://lecturet.gumroad.com/l/aura-landing-template",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "tRPC"]
   },
   {
-    title: "Portfolio Thibault Leture",
+    title: "ElegantSpaces - Interior Design Template",
     description: [
-      "Site portfolio interactif et responsive pour présenter mon parcours et mes projets.",
-      "Construit avec Next.js, TypeScript et Tailwind CSS, déployé sur Vercel.",
-      "Met en œuvre des animations et un design soigné pour une navigation fluide.",
+      "Sophisticated Next.js template for interior design agencies.",
+      "Showcases projects and services with a premium, modern aesthetic.",
+      "Developed using Next.js, TypeScript, Tailwind CSS, and shadcn/ui."
     ],
-    link: "https://github.com/TeeBo8/portfoliothibaultleture",
+    link: "https://elegant-spaces-template.vercel.app/",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"]
   },
   {
-    title: "FlickrImages",
+    title: "Eclat - Jewelry Store Template",
     description: [
-      "Application web simple permettant de rechercher et d'afficher des images via l'API publique de Flickr.",
-      "Développée en JavaScript vanilla, HTML et CSS.",
-      "Démontre la manipulation d'API externes et l'affichage dynamique de contenu.",
+      "Premium Next.js template for online jewelry stores or showcases.",
+      "Focuses on high-quality visuals and an elegant user experience.",
+      "Stack includes Next.js, TypeScript, Tailwind CSS, shadcn/ui, and Framer Motion."
     ],
-    link: "https://github.com/TeeBo8/FlickrImages",
-  },
+    link: "https://jewelry-template.vercel.app/",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"]
+  }
 ];
 
 const ProjectsCV = () => {
